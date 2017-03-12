@@ -6,7 +6,12 @@
             templateUrl: './src/main/main.html'
         }).Class({
             constructor: function () {
+                this.newJob = {}
+            },
 
+            apply: function(){
+                this.newJob.date = new Date();
+                console.log(this.newJob);
             }
         });
 }) (window.app || (window.app = {}));/**
