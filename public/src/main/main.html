@@ -3,3 +3,20 @@
 Company:<br>
 <input [(ngModel)]="newJob.name" type="text" name="name" placeholder="Microsoft">
 <button (click)="apply()">Apply</button>
+
+<div *ngIf="jobsList.length !== 0">
+    <table>
+        <tr>
+            <th>Company Name</th>
+            <th>Date</th>
+        </tr>
+        <tr *ngFor="let job of jobsList">
+            <td>{{job.name}}</td>
+            <td>{{job.date}}</td>
+        </tr>
+    </table>
+</div>
+<div *ngIf="jobsList.length === 0">
+    <br>
+    Please apply for a company first!
+</div>
