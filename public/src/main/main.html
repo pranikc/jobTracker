@@ -1,21 +1,44 @@
-<h1 class="title">Welcome to your Job Tracker</h1>
-<h3>Enter the company details below</h3>
-Company:<br>
-<input [(ngModel)]="newJob.name" type="text" name="name" placeholder="Microsoft">
-<button (click)="apply()">Apply</button>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css">
 
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="text-primary text-center">Welcome to your Job Tracker</h1>
+    </div>
+</div>
+
+<h4>Enter the company details below</h4>
+<br>
+<h4>Company:</h4>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input [(ngModel)]="newJob.name" type="text" name="name" class="form-control" placeholder="Microsoft">
+            <span class="input-group-btn">
+                <button class="btn btn-default" (click)="apply()">Apply</button>
+            </span>
+        </div>
+    </div>
+</div>
+
+<br>
 <div *ngIf="jobsList.length !== 0">
-    <table>
-        <tr>
-            <th>Company Name</th>
-            <th>Date</th>
-        </tr>
-        <tr *ngFor="let job of jobsList">
-            <td>{{job.name}}</td>
-            <td>{{job.date}}</td>
-        </tr>
+    <table class="table table-striped">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Company Name</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let job of jobsList">
+                <td>{{job.name}}</td>
+                <td>{{job.date}}</td>
+            </tr>
+        </tbody>
     </table>
 </div>
+
 <div *ngIf="jobsList.length === 0">
     <br>
     Please apply for a company first!
