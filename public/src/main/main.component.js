@@ -4,6 +4,7 @@
         .Component({
             selector: 'mainInfo',
             templateUrl: './src/main/main.html',
+            pipes: [app.SortDatePipe],
             providers: [ng.http.HTTP_PROVIDERS, app.MainService]
         }).Class({
             constructor: [app.MainService, function(_service){

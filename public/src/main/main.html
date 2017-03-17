@@ -31,7 +31,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let job of jobsList">
+            <tr *ngFor="let job of jobsList | dateSort">
                 <td>{{job.name}}</td>
                 <td>{{job.date}}</td>
             </tr>
